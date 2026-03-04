@@ -725,7 +725,9 @@ body:has(.portfolio) {
   }
 }
 .portfolio .heading_01 {
+  position: relative;
   width: 100%;
+  padding-top: 100px;
   margin-bottom: 40px;
   font-size: 4rem;
   line-height: 1.2;
@@ -750,20 +752,56 @@ body:has(.portfolio) {
 }
 @media (max-width: 768px) {
   .portfolio .heading_01 {
+    padding-top: 80px;
     font-size: 3rem;
   }
 }
-.portfolio .heading_01 span {
-  font-weight: 400;
-  font-size: 1rem;
+.portfolio .heading_01::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background: url(../images/inoshishi_01.png) no-repeat;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  -webkit-animation: swing 3s ease-in-out infinite;
+          animation: swing 3s ease-in-out infinite;
 }
 @media (max-width: 768px) {
-  .portfolio .heading_01 span {
-    font-size: 0.875rem;
+  .portfolio .heading_01::before {
+    width: 60px;
+    height: 60px;
   }
 }
-.portfolio .heading_01 .pc-only {
-  display: inline;
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(-6deg);
+            transform: translateX(-50%) rotate(-6deg);
+  }
+  50% {
+    -webkit-transform: translateX(-50%) rotate(6deg);
+            transform: translateX(-50%) rotate(6deg);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(-6deg);
+            transform: translateX(-50%) rotate(-6deg);
+  }
+}
+@keyframes swing {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(-6deg);
+            transform: translateX(-50%) rotate(-6deg);
+  }
+  50% {
+    -webkit-transform: translateX(-50%) rotate(6deg);
+            transform: translateX(-50%) rotate(6deg);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(-6deg);
+            transform: translateX(-50%) rotate(-6deg);
+  }
 }
 .portfolio .heading_02 {
   position: relative;

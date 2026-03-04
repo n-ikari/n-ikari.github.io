@@ -41,31 +41,51 @@ body:has(.portfolio) {
   }
 
   .heading_01 {
+    position: relative;
     width: 100%;
+    padding-top: 100px;
     margin-bottom: 40px;
     font-size: r(64);
     line-height: 1.2;
+
     // letter-spacing: 0.1em;
     // text-shadow: var(--textshadow);
 
     @include flex(center, center, column, 1rem);
 
     @include sp {
+      padding-top: 80px;
       font-size: r(48);
     }
 
-    span {
-      font-weight: $fw-r;
-      font-size: r(16);
-      // text-shadow: var(--textshadow);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      background: url(../images/inoshishi_01.png) no-repeat;
+      background-size: contain;
+      width: 70px;
+      height: 70px;
+      z-index: 10;
+
+      animation: swing 3s ease-in-out infinite;
 
       @include sp {
-        font-size: r(14);
+        width: 60px;
+        height: 60px;
       }
     }
-
-    .pc-only {
-      display: inline;
+    @keyframes swing {
+      0% {
+        transform: translateX(-50%) rotate(-6deg);
+      }
+      50% {
+        transform: translateX(-50%) rotate(6deg);
+      }
+      100% {
+        transform: translateX(-50%) rotate(-6deg);
+      }
     }
   }
 

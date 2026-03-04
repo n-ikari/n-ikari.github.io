@@ -69,7 +69,7 @@ body:has(.portfolio) {
       height: 70px;
       z-index: 10;
 
-      animation: swing 3s ease-in-out infinite;
+      // animation: swing 3s ease-in-out infinite;
 
       @include sp {
         width: 60px;

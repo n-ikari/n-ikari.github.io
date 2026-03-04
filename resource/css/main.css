@@ -766,8 +766,6 @@ body:has(.portfolio) {
   width: 70px;
   height: 70px;
   z-index: 10;
-  -webkit-animation: swing 3s ease-in-out infinite;
-          animation: swing 3s ease-in-out infinite;
 }
 @media (max-width: 768px) {
   .portfolio .heading_01::before {

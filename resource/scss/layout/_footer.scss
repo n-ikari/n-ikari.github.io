@@ -1,0 +1,39 @@
+@use '../base/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+#sample-cafe {
+  .footer {
+    &__bg {
+      padding-block: 80px;
+      background: url(../../works/sample-cafe/images/fotter_bg.webp) no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    text-align: center;
+
+    &__inner {
+      width: 90%;
+      margin-inline: auto;
+      @include flex(center, center, column, r(24));
+    }
+    &__brand {
+      @include brand-logo;
+    }
+    &__sns_list {
+      @include flex(center, center, row, r(24));
+      li {
+        background: #fff;
+        padding: 0.5rem;
+        border-radius: 8px;
+        max-width: 48px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &__copy {
+      font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+    }
+  }
+}

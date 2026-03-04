@@ -1,0 +1,35 @@
+@use '../base/variables' as *;
+/* =========================
+   CSS Custom Properties
+   ========================= */
+:root {
+  // ?エフェクト ページ全体ロードフェード用
+  --page-fade-duration: 1.5s;
+  --page-fade-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+
+  // ?エフェクト スクロール用
+  --scroll-fade-duration: 0.8s;
+  --scroll-fade-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  // ?ヘッダー
+  --nav-height: auto;
+  --nav-bg: #{$bg-color}; /* ヘッダー背景 */
+  --nav-fg: #{$primary-color}; /* 文字色 */
+  --nav-btn: #{$secondary-color}; /* アクセント */
+  --menu-bg: #{$bg-color}; /* モバイルメニュー背景 */
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --gap-x: 20px;
+  --speed: 0.5s; /* アニメ速度 */
+  /* 固定ヘッダー分ずらす（見出しやセクションに効く） */
+  --fixed-header: 64px;
+
+  // --radius: 12px;           /* 使うならここで定義。未定義時は下でフォールバック入れてる */
+  // --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
+
+  // ?テキスト用
+  --textshadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  --boxshadow: 8px 16px 30px rgba(0, 0, 0, 0.1);
+}
+/* 実高さに合わせて調整 */
+[id] {
+  scroll-margin-top: calc(var(--fixed-header) + 8px);
+}

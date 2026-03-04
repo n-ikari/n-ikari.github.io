@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja" class="page-preload">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/resource/css/main.css" />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <div class="portfolio">
+      <div class="hero fade-up" data-stagger data-stagger-interval="600ms" data-stagger-base="300ms">
+        <h1 class="heading_01">Portfolio</h1>
+        <div class="lead">
+          <p class="tac">はじめまして。</p>
+          <p>
+            ここは猪狩菜南緒のポートフォリオサイトです。<br />
+            わたしのこれまでの制作物と身につけたスキルをまとめています。<br />
+            主に企業サイトの改修・カスタマイズを中心に制作に携わっています。
+          </p>
+        </div>
+
+        <!-- 見出し（2番目）より「ちょい遅れ」にしたい -->
+        <!-- ① スタッガーの計算値に +120ms 上乗せするパターン -->
+
+        <!-- ② 完全に絶対値で指定したいなら（スタッガー無視） -->
+        <!-- <div class="btn " data-fade-delay-abs="720ms">
+        <a href="#reservation">ご予約はこちら</a>
+       </div> -->
+      </div>
+      <header id="header" class="header fade-up">
+        <div class="header__inner">
+          <!-- 開閉ボタン（モバイル） -->
+          <button class="nav__toggle" aria-expanded="false" aria-controls="navMenu" aria-label="メニューを開く">
+            <span class="nav__bar" aria-hidden="true"></span>
+            <span class="nav__bar" aria-hidden="true"></span>
+            <span class="nav__bar" aria-hidden="true"></span>
+          </button>
+
+          <!-- メニュー本体 -->
+          <nav id="navMenu" class="nav__menu" aria-label="メインメニュー">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#aboutme">About me</a></li>
+              <li class="nav__item"><a href="#skills">Skills</a></li>
+              <li class="nav__item"><a href="#works">Works</a></li>
+              <!-- <li class="nav__item"><a href="#focus">Focus</a></li>
+              <li class="nav__item"><a href="#contact">Contact</a></li> -->
+            </ul>
+          </nav>
+        </div>
+
+        <!-- オーバーレイ（モバイル時） -->
+        <div class="nav__overlay" hidden></div>
+      </header>
+      <main class="main">
+        <section
+          id="aboutme"
+          class="section fade-up"
+          data-stagger
+          data-stagger-interval="400ms"
+          data-stagger-base="100ms"
+        >
+          <div class="inner">
+            <h2 class="heading_02">About me</h2>
+            <h3 class="heading_03">自己紹介</h3>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">
+                32歳のときに約13年間勤めていた販売業を辞めて、職業訓練校で6カ月間WEBデザインを学びました。
+              </li>
+              <li class="portfolio__item">
+                卒業後は印刷会社にてWEBデザイナーとしてLPのデザインとコーディングを経験しました。
+              </li>
+              <li class="portfolio__item">
+                印刷会社での経験を経て、現在はWEB制作会社にて主に企業サイトの改修・カスタマイズを中心に担当しています。
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section
+          id="skills"
+          class="section fade-up"
+          data-stagger
+          data-stagger-interval="400ms"
+          data-stagger-base="100ms"
+        >
+          <div class="inner">
+            <h2 class="heading_02">Skills</h2>
+            <h3 class="heading_03">実務で使用してきた技術と実装内容</h3>
+            <h4 class="heading_04">コーディング</h4>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">HTML / SCSS によるレスポンシブ対応</li>
+              <li class="portfolio__item">デザインカンプからの再現実装</li>
+              <li class="portfolio__item">BEM設計での保守性あるCSS設計</li>
+            </ul>
+            <h4 class="heading_04">JavaScript</h4>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">アニメーション制御</li>
+              <li class="portfolio__item">スライダー実装（slick等）</li>
+              <li class="portfolio__item">DOM操作やイベント処理を中心に、表示切り替えや簡単な状態管理などを実装</li>
+            </ul>
+            <h4 class="heading_04">WordPress</h4>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">オリジナルテーマ作成</li>
+              <li class="portfolio__item">カスタム投稿・ACF実装</li>
+              <li class="portfolio__item">
+                functions.phpでのカスタマイズや条件分岐を用いたテンプレート制御や管理画面のカスタマイズ
+              </li>
+            </ul>
+            <h4 class="heading_04">業務自動化</h4>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">PowerShellでの繰り返し作業の自動処理</li>
+              <li class="portfolio__item">Node.jsでのサイトマップ作成用のwebサイトクローラ作成</li>
+              <li class="portfolio__item">Excel自動集計（Power Query）</li>
+            </ul>
+          </div>
+          <div class="inner">
+            <h3 class="heading_03">使用経験のある技術・ツール</h3>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">
+                HTML / CSS(SCSS) / JavaScript / WordPress / ACF / PHP / node.js（VSCodeのプラグイン制作） / VBA / Local
+                by Flywheel / GitHub（ポートフォリオ公開・コード管理）
+              </li>
+              <li class="portfolio__item">Illustrator / Photoshop / figma / XD</li>
+            </ul>
+          </div>
+        </section>
+        <section
+          id="works"
+          class="section fade-up"
+          data-stagger
+          data-stagger-interval="400ms"
+          data-stagger-base="100ms"
+        >
+          <div class="inner">
+            <h2 class="heading_02">Works</h2>
+            <h3 class="heading_03">これまでの実績</h3>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">
+                大手家電量販店の400ページ規模のサイトリニューアル（コーディング）<span class="label">静的ページ</span>
+              </li>
+              <li class="portfolio__item">
+                県の農業のサイトリニューアル（コーディング）<span class="label">Wordpress</span>
+              </li>
+              <li class="portfolio__item">
+                大手ガス会社のサイトリニューアル・LP制作（コーディング）<span class="label">Wordpress</span>
+              </li>
+              <li class="portfolio__item">
+                <a class="linktext" href="/works/sample-cafe/index.html" target="_blank">架空のカフェサイト</a
+                >を制作しました（デザイン・コーディング）<span class="label">静的ページ</span>
+              </li>
+              <li class="portfolio__item">
+                自身のポートフォリオサイトを制作しました（デザイン・コーディング）<span class="label">静的ページ</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section
+          id="thankyou"
+          class="section thankyou fade-up"
+          data-stagger
+          data-stagger-interval="400ms"
+          data-stagger-base="100ms"
+        >
+          <div class="inner">
+            <h2 class="heading_02">Thank you</h2>
+
+            <p>ここまで見てくださり、ありがとうございました。</p>
+          </div>
+        </section>
+      </main>
+      <footer id="footer" class="footer">
+        <div class="footer__copy">© 2026 ikari portfolio</div>
+      </footer>
+    </div>
+    <script src="/resource/js/effects.js" defer></script>
+    <script src="/resource/js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+//_variables.scss👉 「デザイントークン／設定」カテゴリ
+// 色、フォント、余白、ブレークポイントなどの「プロジェクト全体で使う値」を定義する
+//ITCSS なら Settings（設定層）
+//SMACSS なら Base より前、共通の設定層
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+// *=========================================
+// !color
+// *=========================================
+$clr-f: #3f3f3f; //メイン文字色の設定
+$clr-w: #fff; //メイン文字白色の設定
+$clr-a: #000;
+// 色
+$primary-color: #5c5245;
+$secondary-color: #8b5e3c;
+$bg-color: #f9f6f1;
+$heading-color: #4a3c2a;
+// $text-color:#5c5245;
+$accent-color: #c08a5c;
+$gray-100: #f5f5f5;
+$gray-900: #222;
+
+// *=========================================
+// !font
+// *=========================================
+// $font-base: 'Helvetica Neue', Arial, sans-serif;
+// $font-base: "Playfair Display","Noto Sans JP", sans-serif;
+$ff-1: 'Noto Sans JP', sans-serif; //ベースのフォント
+$ff-2: 'avenir-lt-pro', 'Noto Sans JP', sans-serif; //フォント1
+$ff-3: 'Inconsolata', monospace; //フォント2
+
+$main-ja: 'Noto Sans JP', sans-serif;
+$main-en: 'Poppins', sans-serif;
+
+$fw-r: 400;
+$fw-m: 500;
+$fw-s: 600;
+$fw-b: 700;
+
+//サイズ
+$font-size-base: 16px;

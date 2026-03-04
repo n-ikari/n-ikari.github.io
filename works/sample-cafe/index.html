@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja" class="page-preload">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>サンプル1「カフェ」</title>
+    <link rel="stylesheet" href="../../resource/css/sample-cafe.css" />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body id="sample-cafe">
+    <div class="page_wrap">
+      <header id="header" class="header">
+        <div class="header__inner">
+          <a class="header__brand" href="#">Natural Café Latte</a>
+
+          <!-- 開閉ボタン（モバイル） -->
+          <button class="nav__toggle" aria-expanded="false" aria-controls="navMenu" aria-label="メニューを開く">
+            <span class="nav__bar" aria-hidden="true"></span>
+            <span class="nav__bar" aria-hidden="true"></span>
+            <span class="nav__bar" aria-hidden="true"></span>
+          </button>
+
+          <!-- メニュー本体 -->
+          <nav id="navMenu" class="nav__menu" aria-label="メインメニュー">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#concept">Concept</a></li>
+              <li class="nav__item"><a href="#menu">Menu</a></li>
+              <li class="nav__item"><a href="#access">Access</a></li>
+              <li class="nav__item"><a href="#reservation">Reservation</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- オーバーレイ（モバイル時） -->
+        <div class="nav__overlay" hidden></div>
+      </header>
+
+      <div class="hero" data-stagger data-stagger-interval="600ms" data-stagger-base="300ms">
+        <p class="fade-in" data-reveal-once="true">木の温もりに包まれた、<br class="sp-only" />ほっとできる空間</p>
+
+        <h1 class="heading_01 fade-in">
+          Natural<br class="sp-only" />
+          Café Latte
+          <span>ナチュラル カフェ ラテ</span>
+        </h1>
+
+        <!-- 見出し（2番目）より「ちょい遅れ」にしたい -->
+        <!-- ① スタッガーの計算値に +120ms 上乗せするパターン -->
+        <div class="btn fade-up" data-stagger-offset="200ms">
+          <a href="#reservation">ご予約はこちら</a>
+        </div>
+
+        <!-- ② 完全に絶対値で指定したいなら（スタッガー無視） -->
+        <!-- <div class="btn fade-up" data-fade-delay-abs="720ms">
+        <a href="#reservation">ご予約はこちら</a>
+       </div> -->
+      </div>
+      <section id="concept" class="concept bg-c2">
+        <div class="inner" data-stagger data-stagger-interval="400ms" data-stagger-base="100ms">
+          <h2 class="heading_02 fade-in"><span>Concept</span></h2>
+          <p class="concept__text fade-up">
+            木のぬくもりにこだわった内装と<br />
+            厳選した豆で淹れるコーヒー
+          </p>
+          <div class="concept__img_wrap fade-up">
+            <div class="img_box"><img src="images/concept_01.webp" alt="店内の写真" /></div>
+            <div class="img_box"><img src="images/concept_02.webp" alt="厳選したコーヒー豆" /></div>
+          </div>
+        </div>
+      </section>
+      <section id="menu" class="menu bg-c1">
+        <div class="inner" data-stagger data-stagger-interval="400ms" data-stagger-base="100ms">
+          <h2 class="heading_02 fade-in"><span>Our Menu</span></h2>
+          <ul class="card__list fade-up">
+            <li class="card__item">
+              <a href="#coffee">
+                <div class="img_box">
+                  <img src="images/coffee.webp" alt="コーヒーメニュー" />
+                </div>
+                <h3 class="heading_03--arrow"><span>Coffee</span></h3>
+              </a>
+            </li>
+            <li class="card__item">
+              <a href="#cake">
+                <div class="img_box">
+                  <img src="images/cake.webp" alt="ケーキメニュー" />
+                </div>
+                <h3 class="heading_03--arrow"><span>Cake</span></h3>
+              </a>
+            </li>
+            <li class="card__item">
+              <a href="#sandwich">
+                <div class="img_box">
+                  <img src="images/sandwich.webp" alt="サンドウィッチメニュー" />
+                </div>
+                <h3 class="heading_03--arrow"><span>Sandwich</span></h3>
+              </a>
+            </li>
+          </ul>
+          <!-- <div class="btn">
+            <a href="menu.html">全メニューを見る</a>
+          </div> -->
+        </div>
+      </section>
+      <section id="coffee" class="coffee bg-c1">
+        <div class="inner" data-stagger data-stagger-interval="200ms" data-stagger-base="300ms">
+          <h2 class="heading_02--circle"><span class="fade-up">Coffee</span></h2>
+          <ul class="card-2__list fade-up">
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/menu_coffee_american.webp" alt="アメリカンコーヒー" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">アメリカンコーヒー</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/menu_coffee_american.webp" alt="アメリカンコーヒー" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">アメリカンコーヒー</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/menu_coffee_american.webp" alt="アメリカンコーヒー" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">アメリカンコーヒー</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/menu_coffee_american.webp" alt="アメリカンコーヒー" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">アメリカンコーヒー</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+          </ul>
+          <!-- <div class="btn">
+            <a href="menu.html">全メニューを見る</a>
+          </div> -->
+        </div>
+      </section>
+      <section id="cake" class="cake bg-c1">
+        <div class="inner" data-stagger data-stagger-interval="200ms" data-stagger-base="300ms">
+          <h2 class="heading_02--circle"><span class="fade-up">Cake</span></h2>
+          <ul class="card-2__list fade-up">
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/cake.webp" alt="ティラミスケーキ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">ティラミスケーキ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/cake.webp" alt="季節のチーズケーキ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">季節のチーズケーキ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/cake.webp" alt="ティラミスケーキ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">ティラミスケーキ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/cake.webp" alt="ティラミスケーキ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">ティラミスケーキ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+          </ul>
+          <!-- <div class="btn">
+            <a href="menu.html">全メニューを見る</a>
+          </div> -->
+        </div>
+      </section>
+      <section id="sandwich" class="sandwich bg-c1">
+        <div class="inner" data-stagger data-stagger-interval="200ms" data-stagger-base="300ms">
+          <h2 class="heading_02--circle"><span class="fade-up">Sandwich</span></h2>
+          <ul class="card-2__list fade-up">
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/sandwich.webp" alt="たまごとハムのサンドウィッチ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">たまごとハムのサンドウィッチ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/sandwich.webp" alt="たまごとハムのサンドウィッチ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">たまごとハムのサンドウィッチ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/sandwich.webp" alt="たまごとハムのサンドウィッチ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">たまごとハムのサンドウィッチ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+            <li class="card-2__item">
+              <div class="card-2__img">
+                <img src="images/sandwich.webp" alt="たまごとハムのサンドウィッチ" />
+              </div>
+              <dl class="card-2__text">
+                <dt class="card-2__name">たまごとハムのサンドウィッチ</dt>
+                <dd class="card-2__price">600<span>円（税込み660円）</span></dd>
+              </dl>
+            </li>
+          </ul>
+          <!-- <div class="btn">
+            <a href="menu.html">全メニューを見る</a>
+          </div> -->
+        </div>
+      </section>
+
+      <section id="access" class="access">
+        <div class="inner" data-stagger data-stagger-interval="400ms" data-stagger-base="300ms">
+          <h2 class="heading_02 fade-in"><span>Access</span></h2>
+          <div class="fade-up">
+            <div class="access__flex-group">
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7477988419546!2d139.74285797602607!3d35.65858483121736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1757469057157!5m2!1sja!2sjp"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <ul class="access__list">
+                <li class="access__item">
+                  <h3 class="heading_03--bb">住所</h3>
+                  <p>東京都港区芝公園4-2-8</p>
+                </li>
+                <li class="access__item">
+                  <h3 class="heading_03--bb">営業時間</h3>
+                  <p>10:00<span>-</span>19:00</p>
+                </li>
+                <li class="access__item">
+                  <h3 class="heading_03--bb">定休日</h3>
+                  <p>毎週火曜日</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="reservation" class="reservation bg-c1">
+        <div class="inner" data-stagger data-stagger-interval="400ms" data-stagger-base="300ms">
+          <h2 class="heading_02 fade-in"><span>Reservation</span></h2>
+          <div class="fade-up">
+            <p>ご予約はお電話にて承っております</p>
+            <a class="tel" href="#">000-123-4567</a>
+            <p>営業時間　10:00-19:00</p>
+            <p>定休日　毎週火曜日</p>
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="footer">
+        <div class="footer__bg">
+          <div class="footer__inner fade-in" data-fade-delay="600ms">
+            <a class="footer__brand" href="#">Natural Café Latte</a>
+            <!-- <address class="footer__address">
+                <p><span>〒000-0000</span>東京都港区芝公園４丁目２−８</p>
+                <a class="tel" href="#">000-123-4567</a>
+              </address> -->
+            <ul class="footer__sns_list">
+              <li>
+                <a href="#" target="_blank"><img src="images/sns_x.webp" alt="X公式アカウント" /></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"><img src="images/sns_inst.webp" alt="Instagram公式アカウント" /></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"><img src="images/sns_fb.webp" alt="Facebook公式アカウント" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__copy">© 2025 Natural Café Latte</div>
+      </footer>
+    </div>
+    <script src="../../resource/js/effects.js" defer></script>
+    <script src="../../resource/js/main.js" defer></script>
+  </body>
+</html>

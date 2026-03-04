@@ -1,0 +1,1258 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* 全体をスムーススクロール（ユーザーの低速設定は尊重） */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+a {
+  display: inline-block;
+  color: #333;
+  opacity: 1;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/* =========================
+   CSS Custom Properties
+   ========================= */
+:root {
+  --page-fade-duration: 1.5s;
+  --page-fade-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --scroll-fade-duration: 0.8s;
+  --scroll-fade-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --nav-height: auto;
+  --nav-bg: #f9f6f1; /* ヘッダー背景 */
+  --nav-fg: #5c5245; /* 文字色 */
+  --nav-btn: #8b5e3c; /* アクセント */
+  --menu-bg: #f9f6f1; /* モバイルメニュー背景 */
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --gap-x: 20px;
+  --speed: 0.5s; /* アニメ速度 */
+  /* 固定ヘッダー分ずらす（見出しやセクションに効く） */
+  --fixed-header: 64px;
+  --textshadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  --boxshadow: 8px 16px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 実高さに合わせて調整 */
+[id] {
+  scroll-margin-top: calc(var(--fixed-header) + 8px);
+}
+
+/* =========================
+   Header (BEM)
+   ========================= */
+#sample-cafe .header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  padding: 1.25rem 1.875rem;
+  background: var(--nav-bg);
+  color: var(--nav-fg);
+  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+}
+@media (max-width: 768px) {
+  #sample-cafe .header {
+    padding: 1rem;
+  }
+}
+#sample-cafe .header__inner {
+  display: grid;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--gap-x);
+  grid-template-columns: 1fr auto;
+  width: min(1920px, 100%);
+  margin: 0 auto;
+}
+#sample-cafe .header__brand {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: var(--nav-height);
+  padding-left: 47px;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #8b5e3c;
+}
+@media (max-width: 768px) {
+  #sample-cafe .header__brand {
+    padding-left: 40px;
+  }
+}
+#sample-cafe .header__brand::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  height: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  background: url(../images/logo_icon.webp) no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+}
+#sample-cafe .header {
+  /* ===== PCナビ ===== */
+}
+#sample-cafe .header .nav__menu {
+  display: block;
+}
+#sample-cafe .header .nav__list {
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: clamp(1.25rem, -0.183rem + 2.98vw, 2.5rem);
+}
+#sample-cafe .header {
+  /* a と サブメニューボタンの共通 */
+}
+#sample-cafe .header .nav__item > a,
+#sample-cafe .header .nav__submenu-toggle {
+  position: relative;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--nav-fg);
+  cursor: pointer;
+}
+#sample-cafe .header .nav__item > a::after,
+#sample-cafe .header .nav__submenu-toggle::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #c08a5c;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  content: '';
+}
+#sample-cafe .header .nav__item > a:hover,
+#sample-cafe .header .nav__submenu-toggle:hover {
+  opacity: 1;
+}
+#sample-cafe .header .nav__item > a:hover::after,
+#sample-cafe .header .nav__submenu-toggle:hover::after {
+  width: 100%;
+}
+#sample-cafe .header {
+  /* サブメニュー（PCはホバー/フォーカスで開く） */
+}
+#sample-cafe .header .nav__item--parent {
+  position: relative;
+}
+#sample-cafe .header .nav__item--parent:where(:hover, :focus-within) > .nav__submenu {
+  display: block;
+}
+#sample-cafe .header .nav__submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  margin: 0;
+  padding: 8px;
+  border-radius: var(--radius, 12px); /* ← 未定義時は12pxに */
+  -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  background: #1f2937;
+  list-style: none;
+}
+#sample-cafe .header .nav__submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--nav-fg);
+}
+#sample-cafe .header .nav__submenu a:hover {
+  background: color-mix(in srgb, var(--nav-fg) 10%, transparent);
+}
+#sample-cafe .header {
+  /* ハンバーガー */
+}
+#sample-cafe .header .nav__toggle {
+  display: none;
+  z-index: 11;
+  width: 24px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  justify-self: end;
+}
+#sample-cafe .header .nav__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background: var(--nav-btn);
+  -webkit-transition:
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  transition:
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  transition:
+    transform var(--speed),
+    opacity var(--speed);
+  transition:
+    transform var(--speed),
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+#sample-cafe .header {
+  /* ===== モバイル（768px以下） ===== */
+}
+@media (max-width: 768px) {
+  #sample-cafe .header__inner {
+    grid-template-columns: 1fr auto;
+  }
+  #sample-cafe .header .nav__toggle {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+  }
+  #sample-cafe .header {
+    /* ドロワー */
+  }
+  #sample-cafe .header .nav__menu {
+    position: fixed;
+    inset: 0 0 0 auto; /* 右から出る */
+    z-index: 10;
+    width: min(74vw, 360px); /* フル幅ドロワー。固定幅なら min(84vw, 360px) に */
+    height: 100svh;
+    min-height: 292px;
+    padding: 60px 16px 40px;
+    overflow-y: auto;
+    background: var(--menu-bg);
+    text-align: center;
+    -webkit-transition: -webkit-transform var(--speed) ease;
+    transition: -webkit-transform var(--speed) ease;
+    transition: transform var(--speed) ease;
+    transition:
+      transform var(--speed) ease,
+      -webkit-transform var(--speed) ease;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-overflow-scrolling: touch;
+  }
+  #sample-cafe .header .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    gap: 24px;
+  }
+  #sample-cafe .header {
+    /* サブメニュー（モバイルはアコーディオン） */
+  }
+  #sample-cafe .header .nav__submenu {
+    display: none;
+    position: static;
+    padding: 6px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  #sample-cafe .header .nav__submenu a {
+    padding: 10px 12px 10px 24px;
+  }
+  #sample-cafe .header {
+    /* オーバーレイ */
+  }
+  #sample-cafe .header .nav__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    background: var(--overlay-bg);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+  }
+  #sample-cafe .header .nav__overlay[hidden] {
+    display: none;
+  }
+  #sample-cafe .header {
+    /* 開閉状態（.header に付く） */
+  }
+  #sample-cafe .header.is-open .nav__menu {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  #sample-cafe .header.is-open .nav__overlay {
+    display: block;
+    z-index: 9;
+  }
+  #sample-cafe .header.is-open {
+    /* ハンバーガー → × */
+  }
+  #sample-cafe .header.is-open .nav__bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(28deg);
+    transform: translateY(8px) rotate(28deg);
+  }
+  #sample-cafe .header.is-open .nav__bar:nth-child(2) {
+    opacity: 0;
+  }
+  #sample-cafe .header.is-open .nav__bar:nth-child(3) {
+    -webkit-transform: translateY(-12px) rotate(-28deg);
+    transform: translateY(-12px) rotate(-28deg);
+  }
+  #sample-cafe .header {
+    /* ブレークポイント切替直後のみアニメ無効（JSで .no-anim を一瞬付与） */
+  }
+  #sample-cafe .header.no-anim .nav__menu {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+#sample-cafe .footer__bg {
+  padding-block: 80px;
+  background: url(../../works/sample-cafe/images/fotter_bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#sample-cafe .footer {
+  text-align: center;
+}
+#sample-cafe .footer__inner {
+  width: 90%;
+  margin-inline: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+#sample-cafe .footer__brand {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: var(--nav-height);
+  padding-left: 47px;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #8b5e3c;
+}
+@media (max-width: 768px) {
+  #sample-cafe .footer__brand {
+    padding-left: 40px;
+  }
+}
+#sample-cafe .footer__brand::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  height: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  background: url(../images/logo_icon.webp) no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+}
+#sample-cafe .footer__sns_list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+#sample-cafe .footer__sns_list li {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  max-width: 48px;
+}
+#sample-cafe .footer__sns_list li img {
+  width: 100%;
+}
+#sample-cafe .footer__copy {
+  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+.btn a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  color: #fff;
+  font-weight: 700;
+  background: #8b5e3c;
+  padding: 1.5rem 3rem;
+  font-size: clamp(1rem, 0.964rem + 0.18vw, 1.125rem);
+  border: 1px solid #f9f6f1;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn a:hover {
+  background: #c08a5c;
+  opacity: 1;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+/* 基本：CSSだけの挙動はこれまで通り */
+.sp-only {
+  display: block;
+}
+@media (min-width: 769px) {
+  .sp-only {
+    display: none;
+  }
+}
+
+.pc-only {
+  display: none;
+}
+@media (min-width: 769px) {
+  .pc-only {
+    display: block;
+  }
+}
+
+/* === ページ全体フェード === */
+html.page-preload body {
+  opacity: 0;
+}
+
+html.page-ready body {
+  opacity: 1;
+  -webkit-transition: opacity var(--page-fade-duration) var(--page-fade-ease);
+  transition: opacity var(--page-fade-duration) var(--page-fade-ease);
+}
+
+/* === 共通（初期状態） === */
+.fade-up,
+.fade-left,
+.fade-right,
+.fade-in {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* 方向ごとに開始位置を設定 */
+.fade-up {
+  -webkit-transform: translateY(12px);
+  transform: translateY(12px);
+}
+
+.fade-left {
+  -webkit-transform: translateX(-12px);
+  transform: translateX(-12px);
+}
+
+.fade-right {
+  -webkit-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+.fade-in {
+  -webkit-transform: none;
+  transform: none;
+}
+
+/* 表示状態 */
+.fade-up.is-inview,
+.fade-left.is-inview,
+.fade-right.is-inview,
+.fade-in.is-inview {
+  opacity: 1;
+  -webkit-transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    transform var(--scroll-fade-duration) var(--scroll-fade-ease),
+    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  -webkit-transform: none;
+  transform: none;
+}
+
+/* モーション苦手な人向け */
+@media (prefers-reduced-motion: reduce) {
+  html.page-preload body {
+    opacity: 1;
+  }
+  html.page-ready body {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .fade-in,
+  .fade-up.is-inview,
+  .fade-left.is-inview,
+  .fade-right.is-inview,
+  .fade-in.is-inview {
+    opacity: 1;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/* 個別ディレイ/時間/イージングを data-* で上書きできるように
+   ※既存の transition は各コンポーネント側で定義してOK */
+/* data-* から渡すカスタム値用（存在する時だけ効く） */
+:is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-duration] {
+  -webkit-transition-duration: var(--fade-duration);
+  transition-duration: var(--fade-duration);
+}
+
+:is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-ease] {
+  -webkit-transition-timing-function: var(--fade-ease);
+  transition-timing-function: var(--fade-ease);
+}
+
+/* 初期値では delay 0 にしておく（JSで必要分だけ付与） */
+:is(.fade-up, .fade-left, .fade-right, .fade-in) {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+body {
+  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #5c5245;
+}
+
+a {
+  display: inline-block;
+  color: #5c5245;
+  opacity: 1;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+.hero {
+  height: calc(100svh - var(--fixed-header));
+  max-height: 810px;
+  padding: 120px 1rem;
+  background: url('../../works/sample-cafe/images/fv_pc.webp') no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+    padding: 40px 1rem;
+    background: url('../../works/sample-cafe/images/fv_sp.webp') no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+.hero p {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.09em;
+  text-shadow: var(--textshadow);
+}
+@media (max-width: 768px) {
+  .hero p {
+    font-size: 1.25rem;
+  }
+}
+.hero .heading_01 {
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-shadow: var(--textshadow);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .hero .heading_01 {
+    font-size: 3rem;
+  }
+}
+.hero .heading_01 span {
+  font-weight: 400;
+  font-size: 1rem;
+  text-shadow: var(--textshadow);
+}
+@media (max-width: 768px) {
+  .hero .heading_01 span {
+    font-size: 0.875rem;
+  }
+}
+.hero .heading_01 .pc-only {
+  display: inline;
+}
+
+.heading_02 {
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .heading_02 {
+    margin-bottom: 40px;
+  }
+}
+.heading_02 span {
+  display: inline-block;
+  padding: 0 1rem 8px;
+  border-bottom: 1px solid #c08a5c;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .heading_02 span {
+    font-size: 2rem;
+  }
+}
+
+.heading_02--circle {
+  margin-bottom: 60px;
+  font-size: 2rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .heading_02--circle {
+    margin-bottom: 40px;
+    font-size: 1.75rem;
+  }
+}
+.heading_02--circle span {
+  position: relative;
+  padding-left: 16px;
+}
+.heading_02--circle span::before {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c08a5c;
+  content: '';
+}
+@media (max-width: 768px) {
+  .heading_02--circle span::before {
+    top: 14px;
+  }
+}
+
+.heading_03--arrow {
+  position: relative;
+  font-weight: 500;
+  font-size: clamp(1.125rem, 0.696rem + 0.89vw, 1.5rem);
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .heading_03--arrow {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.heading_03--arrow span {
+  position: relative;
+  padding-right: 36px;
+}
+@media (max-width: 768px) {
+  .heading_03--arrow span {
+    padding-right: 30px;
+  }
+}
+.heading_03--arrow span::before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background: url('../../works/sample-cafe/images/arrow.svg') no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
+  content: '';
+}
+@media (max-width: 768px) {
+  .heading_03--arrow span::before {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.heading_03--bb {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #c08a5c;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+section {
+  padding-block: 60px;
+}
+@media (max-width: 768px) {
+  section {
+    padding-block: 40px;
+  }
+}
+section > .inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+section.bg-c1 {
+  background: #f9f6f1;
+}
+section.bg-c2 {
+  background: #5c5245;
+  color: #fff;
+}
+
+.card__list {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .card__list {
+    gap: 1rem;
+  }
+}
+
+.card__item {
+  width: calc(33.3333333333% - 24px);
+}
+@media (max-width: 768px) {
+  .card__item {
+    width: calc(50% - 16px);
+  }
+}
+.card__item a {
+  display: block;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    -webkit-transform 0.3s ease;
+}
+.card__item a .img_box {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.card__item a img {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    -webkit-transform 0.3s ease;
+}
+.card__item a:hover {
+  opacity: 0.7;
+}
+.card__item a:hover img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.card-2__list {
+  display: grid;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
+}
+@media (max-width: 768px) {
+  .card-2__list {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+.card-2__list .card-2__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .card-2__list .card-2__item {
+    gap: 1rem;
+  }
+}
+.card-2__list .card-2__img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 169px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .card-2__list .card-2__img {
+    max-width: 137px;
+  }
+}
+.card-2__list .card-2__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.card-2__list .card-2__text {
+  width: 100%;
+  border-bottom: 1px solid #c08a5c;
+  font-weight: 400;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .card-2__list .card-2__text {
+    text-align: left;
+  }
+}
+.card-2__list .card-2__name {
+  font-size: clamp(1.125rem, 0.696rem + 0.89vw, 1.5rem);
+}
+.card-2__list .card-2__price {
+  font-size: clamp(1.5rem, 0.929rem + 1.19vw, 2rem);
+}
+.card-2__list .card-2__price span {
+  font-size: 0.6em;
+}
+
+.concept__text {
+  margin-bottom: 60px;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 3;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .concept__text {
+    font-size: 1rem;
+  }
+}
+.concept__img_wrap {
+  overflow: hidden;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0;
+}
+@media (max-width: 768px) {
+  .concept__img_wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.concept__img_wrap img {
+  aspect-ratio: 600/357;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .concept__img_wrap img {
+    aspect-ratio: 4/3;
+  }
+}
+
+.access__flex-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+  -ms-flex-align: start;
+  align-items: start;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .access__flex-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+.access .map,
+.access .access__list {
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .access .map,
+  .access .access__list {
+    width: 100%;
+  }
+}
+.access .map iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600/477;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .access .map iframe {
+    aspect-ratio: 343/206;
+  }
+}
+.access__list {
+  padding-block: clamp(0rem, -3.429rem + 7.14vw, 3rem);
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .access__list {
+    padding-block: 1.5rem;
+  }
+}
+.access__item p {
+  font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+}
+.access__item p span {
+  padding-inline: 1rem;
+}
+
+.reservation {
+  text-align: center;
+}
+.reservation .tel {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 2.5rem;
+} /*# sourceMappingURL=sample-cafe.css.map */

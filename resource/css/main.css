@@ -1,0 +1,1303 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap');
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* 全体をスムーススクロール（ユーザーの低速設定は尊重） */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+a {
+  display: inline-block;
+  color: #333;
+  opacity: 1;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/* =========================
+   CSS Custom Properties
+   ========================= */
+:root {
+  --page-fade-duration: 1.5s;
+  --page-fade-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --scroll-fade-duration: 0.8s;
+  --scroll-fade-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --nav-height: auto;
+  --nav-bg: #f9f6f1; /* ヘッダー背景 */
+  --nav-fg: #5c5245; /* 文字色 */
+  --nav-btn: #8b5e3c; /* アクセント */
+  --menu-bg: #f9f6f1; /* モバイルメニュー背景 */
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --gap-x: 20px;
+  --speed: 0.5s; /* アニメ速度 */
+  /* 固定ヘッダー分ずらす（見出しやセクションに効く） */
+  --fixed-header: 64px;
+  --textshadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  --boxshadow: 8px 16px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 実高さに合わせて調整 */
+[id] {
+  scroll-margin-top: calc(var(--fixed-header) + 8px);
+}
+
+/* =========================
+   Header (BEM)
+   ========================= */
+#sample-cafe .header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  padding: 1.25rem 1.875rem;
+  background: var(--nav-bg);
+  color: var(--nav-fg);
+  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+}
+@media (max-width: 768px) {
+  #sample-cafe .header {
+    padding: 1rem;
+  }
+}
+#sample-cafe .header__inner {
+  display: grid;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--gap-x);
+  grid-template-columns: 1fr auto;
+  width: min(1920px, 100%);
+  margin: 0 auto;
+}
+#sample-cafe .header__brand {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: var(--nav-height);
+  padding-left: 47px;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #8b5e3c;
+}
+@media (max-width: 768px) {
+  #sample-cafe .header__brand {
+    padding-left: 40px;
+  }
+}
+#sample-cafe .header__brand::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  height: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  background: url(../images/logo_icon.webp) no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+}
+#sample-cafe .header {
+  /* ===== PCナビ ===== */
+}
+#sample-cafe .header .nav__menu {
+  display: block;
+}
+#sample-cafe .header .nav__list {
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: clamp(1.25rem, -0.183rem + 2.98vw, 2.5rem);
+}
+#sample-cafe .header {
+  /* a と サブメニューボタンの共通 */
+}
+#sample-cafe .header .nav__item > a,
+#sample-cafe .header .nav__submenu-toggle {
+  position: relative;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--nav-fg);
+  cursor: pointer;
+}
+#sample-cafe .header .nav__item > a::after,
+#sample-cafe .header .nav__submenu-toggle::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #c08a5c;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  content: '';
+}
+#sample-cafe .header .nav__item > a:hover,
+#sample-cafe .header .nav__submenu-toggle:hover {
+  opacity: 1;
+}
+#sample-cafe .header .nav__item > a:hover::after,
+#sample-cafe .header .nav__submenu-toggle:hover::after {
+  width: 100%;
+}
+#sample-cafe .header {
+  /* サブメニュー（PCはホバー/フォーカスで開く） */
+}
+#sample-cafe .header .nav__item--parent {
+  position: relative;
+}
+#sample-cafe .header .nav__item--parent:where(:hover, :focus-within) > .nav__submenu {
+  display: block;
+}
+#sample-cafe .header .nav__submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  margin: 0;
+  padding: 8px;
+  border-radius: var(--radius, 12px); /* ← 未定義時は12pxに */
+  -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  background: #1f2937;
+  list-style: none;
+}
+#sample-cafe .header .nav__submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--nav-fg);
+}
+#sample-cafe .header .nav__submenu a:hover {
+  background: color-mix(in srgb, var(--nav-fg) 10%, transparent);
+}
+#sample-cafe .header {
+  /* ハンバーガー */
+}
+#sample-cafe .header .nav__toggle {
+  display: none;
+  z-index: 11;
+  width: 24px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  justify-self: end;
+}
+#sample-cafe .header .nav__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background: var(--nav-btn);
+  -webkit-transition:
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  transition:
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  transition:
+    transform var(--speed),
+    opacity var(--speed);
+  transition:
+    transform var(--speed),
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+#sample-cafe .header {
+  /* ===== モバイル（768px以下） ===== */
+}
+@media (max-width: 768px) {
+  #sample-cafe .header__inner {
+    grid-template-columns: 1fr auto;
+  }
+  #sample-cafe .header .nav__toggle {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+  }
+  #sample-cafe .header {
+    /* ドロワー */
+  }
+  #sample-cafe .header .nav__menu {
+    position: fixed;
+    inset: 0 0 0 auto; /* 右から出る */
+    z-index: 10;
+    width: min(74vw, 360px); /* フル幅ドロワー。固定幅なら min(84vw, 360px) に */
+    height: 100svh;
+    min-height: 292px;
+    padding: 60px 16px 40px;
+    overflow-y: auto;
+    background: var(--menu-bg);
+    text-align: center;
+    -webkit-transition: -webkit-transform var(--speed) ease;
+    transition: -webkit-transform var(--speed) ease;
+    transition: transform var(--speed) ease;
+    transition:
+      transform var(--speed) ease,
+      -webkit-transform var(--speed) ease;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-overflow-scrolling: touch;
+  }
+  #sample-cafe .header .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    gap: 24px;
+  }
+  #sample-cafe .header {
+    /* サブメニュー（モバイルはアコーディオン） */
+  }
+  #sample-cafe .header .nav__submenu {
+    display: none;
+    position: static;
+    padding: 6px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  #sample-cafe .header .nav__submenu a {
+    padding: 10px 12px 10px 24px;
+  }
+  #sample-cafe .header {
+    /* オーバーレイ */
+  }
+  #sample-cafe .header .nav__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    background: var(--overlay-bg);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+  }
+  #sample-cafe .header .nav__overlay[hidden] {
+    display: none;
+  }
+  #sample-cafe .header {
+    /* 開閉状態（.header に付く） */
+  }
+  #sample-cafe .header.is-open .nav__menu {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  #sample-cafe .header.is-open .nav__overlay {
+    display: block;
+    z-index: 9;
+  }
+  #sample-cafe .header.is-open {
+    /* ハンバーガー → × */
+  }
+  #sample-cafe .header.is-open .nav__bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(28deg);
+    transform: translateY(8px) rotate(28deg);
+  }
+  #sample-cafe .header.is-open .nav__bar:nth-child(2) {
+    opacity: 0;
+  }
+  #sample-cafe .header.is-open .nav__bar:nth-child(3) {
+    -webkit-transform: translateY(-12px) rotate(-28deg);
+    transform: translateY(-12px) rotate(-28deg);
+  }
+  #sample-cafe .header {
+    /* ブレークポイント切替直後のみアニメ無効（JSで .no-anim を一瞬付与） */
+  }
+  #sample-cafe .header.no-anim .nav__menu {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+#sample-cafe .footer__bg {
+  padding-block: 80px;
+  background: url(../../works/sample-cafe/images/fotter_bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#sample-cafe .footer {
+  text-align: center;
+}
+#sample-cafe .footer__inner {
+  width: 90%;
+  margin-inline: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+#sample-cafe .footer__brand {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: var(--nav-height);
+  padding-left: 47px;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #8b5e3c;
+}
+@media (max-width: 768px) {
+  #sample-cafe .footer__brand {
+    padding-left: 40px;
+  }
+}
+#sample-cafe .footer__brand::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  height: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  background: url(../images/logo_icon.webp) no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+}
+#sample-cafe .footer__sns_list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+#sample-cafe .footer__sns_list li {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  max-width: 48px;
+}
+#sample-cafe .footer__sns_list li img {
+  width: 100%;
+}
+#sample-cafe .footer__copy {
+  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+.btn a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  color: #fff;
+  font-weight: 700;
+  background: #8b5e3c;
+  padding: 1.5rem 3rem;
+  font-size: clamp(1rem, 0.964rem + 0.18vw, 1.125rem);
+  border: 1px solid #f9f6f1;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn a:hover {
+  background: #c08a5c;
+  opacity: 1;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+/* 基本：CSSだけの挙動はこれまで通り */
+.sp-only {
+  display: block;
+}
+@media (min-width: 769px) {
+  .sp-only {
+    display: none;
+  }
+}
+
+.pc-only {
+  display: none;
+}
+@media (min-width: 769px) {
+  .pc-only {
+    display: block;
+  }
+}
+
+/* === ページ全体フェード === */
+html.page-preload body {
+  opacity: 0;
+}
+
+html.page-ready body {
+  opacity: 1;
+  -webkit-transition: opacity var(--page-fade-duration) var(--page-fade-ease);
+  transition: opacity var(--page-fade-duration) var(--page-fade-ease);
+}
+
+/* === 共通（初期状態） === */
+.fade-up,
+.fade-left,
+.fade-right,
+.fade-in {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* 方向ごとに開始位置を設定 */
+.fade-up {
+  -webkit-transform: translateY(12px);
+  transform: translateY(12px);
+}
+
+.fade-left {
+  -webkit-transform: translateX(-12px);
+  transform: translateX(-12px);
+}
+
+.fade-right {
+  -webkit-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+.fade-in {
+  -webkit-transform: none;
+  transform: none;
+}
+
+/* 表示状態 */
+.fade-up.is-inview,
+.fade-left.is-inview,
+.fade-right.is-inview,
+.fade-in.is-inview {
+  opacity: 1;
+  -webkit-transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition:
+    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
+    transform var(--scroll-fade-duration) var(--scroll-fade-ease),
+    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  -webkit-transform: none;
+  transform: none;
+}
+
+/* モーション苦手な人向け */
+@media (prefers-reduced-motion: reduce) {
+  html.page-preload body {
+    opacity: 1;
+  }
+  html.page-ready body {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .fade-in,
+  .fade-up.is-inview,
+  .fade-left.is-inview,
+  .fade-right.is-inview,
+  .fade-in.is-inview {
+    opacity: 1;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/* 個別ディレイ/時間/イージングを data-* で上書きできるように
+   ※既存の transition は各コンポーネント側で定義してOK */
+/* data-* から渡すカスタム値用（存在する時だけ効く） */
+:is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-duration] {
+  -webkit-transition-duration: var(--fade-duration);
+  transition-duration: var(--fade-duration);
+}
+
+:is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-ease] {
+  -webkit-transition-timing-function: var(--fade-ease);
+  transition-timing-function: var(--fade-ease);
+}
+
+/* 初期値では delay 0 にしておく（JSで必要分だけ付与） */
+:is(.fade-up, .fade-left, .fade-right, .fade-in) {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.poppins-black {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+body:has(.portfolio) {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #f1f9f6;
+  color: #333;
+}
+@media (max-width: 768px) {
+  body:has(.portfolio) {
+    font-size: 0.875rem;
+  }
+}
+
+.portfolio {
+  position: relative;
+}
+.portfolio h1,
+.portfolio h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.portfolio .inner + .inner {
+  margin-top: 80px;
+}
+@media (max-width: 768px) {
+  .portfolio .inner + .inner {
+    margin-top: 60px;
+  }
+}
+.portfolio .heading_01 {
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 4rem;
+  line-height: 1.2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .portfolio .heading_01 {
+    font-size: 3rem;
+  }
+}
+.portfolio .heading_01 span {
+  font-weight: 400;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .portfolio .heading_01 span {
+    font-size: 0.875rem;
+  }
+}
+.portfolio .heading_01 .pc-only {
+  display: inline;
+}
+.portfolio .heading_02 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .portfolio .heading_02 {
+    margin-bottom: 40px;
+    font-size: 1.75rem;
+  }
+}
+.portfolio .heading_02::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 40px;
+  height: 8px;
+  background: #60c864;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .portfolio .heading_02::after {
+    width: 24px;
+    height: 6px;
+  }
+}
+.portfolio .heading_03 {
+  margin-bottom: 30px;
+  font-size: 1.125rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .portfolio .heading_03 {
+    margin-bottom: 30px;
+    font-size: 1rem;
+  }
+}
+.portfolio .heading_03--green {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .portfolio .heading_03--green {
+    font-size: 1rem;
+  }
+}
+.portfolio .heading_04 {
+  color: #60c864;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.portfolio ul + h4 {
+  margin-top: 40px;
+}
+.portfolio .tac {
+  text-align: center;
+}
+.portfolio .linktext {
+  color: #60c864;
+  border-bottom: 1px solid #60c864;
+}
+.portfolio .label {
+  background: #60c864;
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.portfolio .header {
+  width: 90%;
+  max-width: 744px;
+  margin-inline: auto;
+  margin-bottom: 120px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 50;
+  padding: 1.25rem 1.875rem;
+  background: #fff;
+  border-radius: 100vw;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  -webkit-box-shadow: var(--boxshadow);
+  box-shadow: var(--boxshadow);
+}
+@media (max-width: 768px) {
+  .portfolio .header {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    z-index: 999;
+  }
+}
+.portfolio .header__brand {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: var(--nav-height);
+  padding-left: 47px;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #8b5e3c;
+}
+@media (max-width: 768px) {
+  .portfolio .header__brand {
+    padding-left: 40px;
+  }
+}
+.portfolio .header__brand::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  height: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem);
+  background: url(../images/logo_icon.webp) no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+}
+.portfolio .header {
+  /* ===== PCナビ ===== */
+}
+.portfolio .header .nav__menu {
+  display: block;
+}
+.portfolio .header .nav__list {
+  font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: clamp(1.25rem, -0.183rem + 2.98vw, 2.5rem);
+}
+.portfolio .header {
+  /* a と サブメニューボタンの共通 */
+}
+.portfolio .header .nav__item > a,
+.portfolio .header .nav__submenu-toggle {
+  position: relative;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.portfolio .header .nav__item > a:hover,
+.portfolio .header .nav__submenu-toggle:hover {
+  opacity: 1;
+  color: #60c864;
+}
+.portfolio .header {
+  /* サブメニュー（PCはホバー/フォーカスで開く） */
+}
+.portfolio .header .nav__item--parent {
+  position: relative;
+}
+.portfolio .header .nav__item--parent:where(:hover, :focus-within) > .nav__submenu {
+  display: block;
+}
+.portfolio .header .nav__submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  margin: 0;
+  padding: 8px;
+  border-radius: var(--radius, 12px); /* ← 未定義時は12pxに */
+  -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  background: #1f2937;
+  list-style: none;
+}
+.portfolio .header .nav__submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--nav-fg);
+}
+.portfolio .header .nav__submenu a:hover {
+  background: color-mix(in srgb, var(--nav-fg) 10%, transparent);
+}
+.portfolio .header {
+  /* ハンバーガー */
+}
+.portfolio .header .nav__toggle {
+  display: none;
+  z-index: 11;
+  width: 24px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  justify-self: end;
+}
+.portfolio .header .nav__bar {
+  display: block;
+  width: 18px;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background: #60c864;
+  -webkit-transition:
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  transition:
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  transition:
+    transform var(--speed),
+    opacity var(--speed);
+  transition:
+    transform var(--speed),
+    opacity var(--speed),
+    -webkit-transform var(--speed);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+.portfolio .header {
+  /* ===== モバイル（768px以下） ===== */
+}
+@media (max-width: 768px) {
+  .portfolio .header__inner {
+    grid-template-columns: 1fr auto;
+  }
+  .portfolio .header .nav__toggle {
+    position: relative;
+    z-index: 999;
+    top: 1rem;
+    right: 1rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+    background: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  .portfolio .header {
+    /* ドロワー */
+  }
+  .portfolio .header .nav__menu {
+    position: fixed;
+    inset: 0 0 0 auto; /* 右から出る */
+    z-index: 10;
+    width: min(74vw, 360px); /* フル幅ドロワー。固定幅なら min(84vw, 360px) に */
+    height: 100svh;
+    min-height: 292px;
+    padding: 120px 60px;
+    overflow-y: auto;
+    background: #fff;
+    text-align: left;
+    -webkit-transition: -webkit-transform var(--speed) ease;
+    transition: -webkit-transform var(--speed) ease;
+    transition: transform var(--speed) ease;
+    transition:
+      transform var(--speed) ease,
+      -webkit-transform var(--speed) ease;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-overflow-scrolling: touch;
+    border-top-left-radius: 44px;
+  }
+  .portfolio .header .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .portfolio .header {
+    /* サブメニュー（モバイルはアコーディオン） */
+  }
+  .portfolio .header .nav__submenu {
+    display: none;
+    position: static;
+    padding: 6px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  .portfolio .header .nav__submenu a {
+    padding: 10px 12px 10px 24px;
+  }
+  .portfolio .header {
+    /* オーバーレイ */
+  }
+  .portfolio .header .nav__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    background: var(--overlay-bg);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+  }
+  .portfolio .header .nav__overlay[hidden] {
+    display: none;
+  }
+  .portfolio .header {
+    /* 開閉状態（.header に付く） */
+  }
+  .portfolio .header.is-open .nav__menu {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  .portfolio .header.is-open .nav__overlay {
+    display: block;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+  }
+  .portfolio .header.is-open {
+    /* ハンバーガー → × */
+  }
+  .portfolio .header.is-open .nav__bar:nth-child(1) {
+    -webkit-transform: translateY(6px) rotate(40deg);
+    transform: translateY(6px) rotate(40deg);
+  }
+  .portfolio .header.is-open .nav__bar:nth-child(2) {
+    opacity: 0;
+  }
+  .portfolio .header.is-open .nav__bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-40deg);
+    transform: translateY(-8px) rotate(-40deg);
+  }
+  .portfolio .header {
+    /* ブレークポイント切替直後のみアニメ無効（JSで .no-anim を一瞬付与） */
+  }
+  .portfolio .header.no-anim .nav__menu {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+.portfolio .hero {
+  width: 90%;
+  max-width: 744px;
+  margin-inline: auto;
+  padding-block: 80px;
+  text-align: center;
+}
+.portfolio .lead {
+  line-height: 2em;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .portfolio .lead {
+    text-align: left;
+  }
+}
+.portfolio .main {
+  padding-bottom: 120px;
+}
+.portfolio .section {
+  width: 90%;
+  max-width: 960px;
+  padding: 30px 40px 80px;
+  margin-inline: auto;
+  margin-top: 120px;
+  background: #fff;
+  border-radius: 24px;
+  -webkit-box-shadow: var(--boxshadow);
+  box-shadow: var(--boxshadow);
+}
+@media (max-width: 768px) {
+  .portfolio .section {
+    padding: 30px 20px 60px;
+    margin-top: 60px;
+  }
+}
+.portfolio .section:first-child {
+  margin-top: 0;
+}
+.portfolio__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (max-width: 768px) {
+  .portfolio__list:has(.label) {
+    gap: 20px;
+  }
+}
+.portfolio__item {
+  position: relative;
+  padding-left: 28px;
+}
+@media (max-width: 768px) {
+  .portfolio__item {
+    padding-left: 20px;
+  }
+}
+.portfolio__item:has(.label) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.portfolio__item::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 4px;
+  border-radius: 8px;
+  background: #60c864;
+  top: 13px;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+  .portfolio__item::before {
+    width: 10px;
+    height: 3px;
+    top: 12px;
+  }
+}
+.portfolio .thankyou {
+  text-align: center;
+}
+.portfolio .footer__copy {
+  padding-block: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: #333;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .portfolio .footer__copy {
+    font-size: 0.875rem;
+  }
+} /*# sourceMappingURL=main.css.map */

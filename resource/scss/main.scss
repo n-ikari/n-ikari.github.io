@@ -76,17 +76,17 @@ body:has(.portfolio) {
         height: 60px;
       }
     }
-    @keyframes swing {
-      0% {
-        transform: translateX(-50%) rotate(-6deg);
-      }
-      50% {
-        transform: translateX(-50%) rotate(6deg);
-      }
-      100% {
-        transform: translateX(-50%) rotate(-6deg);
-      }
-    }
+    // @keyframes swing {
+    //   0% {
+    //     transform: translateX(-50%) rotate(-6deg);
+    //   }
+    //   50% {
+    //     transform: translateX(-50%) rotate(6deg);
+    //   }
+    //   100% {
+    //     transform: translateX(-50%) rotate(-6deg);
+    //   }
+    // }
   }
 
   .heading_02 {

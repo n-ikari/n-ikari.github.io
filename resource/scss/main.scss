@@ -56,7 +56,8 @@ body:has(.portfolio) {
     @include sp {
       padding-top: 80px;
       margin-bottom: 20px;
-      font-size: r(52);
+      font-size: r(56);
+      gap: 4px;
     }
 
     &::before {
@@ -74,8 +75,8 @@ body:has(.portfolio) {
       // animation: swing 3s ease-in-out infinite;
 
       @include sp {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
       }
     }
 
@@ -518,7 +519,7 @@ body:has(.portfolio) {
 
   .thankyou {
     text-align: center;
-    p{
+    p {
       line-height: 2em;
     }
   }

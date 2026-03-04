@@ -753,7 +753,8 @@ body:has(.portfolio) {
   .portfolio .heading_01 {
     padding-top: 80px;
     margin-bottom: 20px;
-    font-size: 3.25rem;
+    font-size: 3.5rem;
+    gap: 4px;
   }
 }
 .portfolio .heading_01::before {
@@ -771,8 +772,8 @@ body:has(.portfolio) {
 }
 @media (max-width: 768px) {
   .portfolio .heading_01::before {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
 }
 .portfolio .heading_01 span {

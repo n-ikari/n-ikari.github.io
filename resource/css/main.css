@@ -761,6 +761,8 @@ body:has(.portfolio) {
   position: absolute;
   top: 0;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   background: url(../images/inoshishi_01.png) no-repeat;
   background-size: contain;
   width: 70px;

@@ -1,12 +1,12 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 *,
 ::before,
 ::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ::before,
@@ -100,8 +100,8 @@ img {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -110,7 +110,7 @@ img {
   padding: 1.25rem 1.875rem;
   background: var(--nav-bg);
   color: var(--nav-fg);
-  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-family: "Playfair Display", "Noto Sans JP", sans-serif;
   font-weight: 800;
 }
 @media (max-width: 768px) {
@@ -122,8 +122,8 @@ img {
   display: grid;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: var(--gap-x);
   grid-template-columns: 1fr auto;
   width: min(1920px, 100%);
@@ -136,8 +136,8 @@ img {
   display: inline-flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   height: var(--nav-height);
   padding-left: 47px;
@@ -161,8 +161,8 @@ img {
   background: url(../images/logo_icon.webp) no-repeat;
   background-size: contain;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  content: '';
+          transform: translateY(-50%);
+  content: "";
 }
 #sample-cafe .header {
   /* ===== PCナビ ===== */
@@ -179,16 +179,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: clamp(1.25rem, -0.183rem + 2.98vw, 2.5rem);
 }
 #sample-cafe .header {
@@ -214,7 +214,7 @@ img {
   background-color: #c08a5c;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
-  content: '';
+  content: "";
 }
 #sample-cafe .header .nav__item > a:hover,
 #sample-cafe .header .nav__submenu-toggle:hover {
@@ -243,7 +243,7 @@ img {
   padding: 8px;
   border-radius: var(--radius, 12px); /* ← 未定義時は12pxに */
   -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   background: #1f2937;
   list-style: none;
 }
@@ -278,21 +278,12 @@ img {
   margin: 0 auto;
   border-radius: 4px;
   background: var(--nav-btn);
-  -webkit-transition:
-    opacity var(--speed),
-    -webkit-transform var(--speed);
-  transition:
-    opacity var(--speed),
-    -webkit-transform var(--speed);
-  transition:
-    transform var(--speed),
-    opacity var(--speed);
-  transition:
-    transform var(--speed),
-    opacity var(--speed),
-    -webkit-transform var(--speed);
+  -webkit-transition: opacity var(--speed), -webkit-transform var(--speed);
+  transition: opacity var(--speed), -webkit-transform var(--speed);
+  transition: transform var(--speed), opacity var(--speed);
+  transition: transform var(--speed), opacity var(--speed), -webkit-transform var(--speed);
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
 }
 #sample-cafe .header {
   /* ===== モバイル（768px以下） ===== */
@@ -309,16 +300,16 @@ img {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 8px;
   }
   #sample-cafe .header {
@@ -338,23 +329,21 @@ img {
     -webkit-transition: -webkit-transform var(--speed) ease;
     transition: -webkit-transform var(--speed) ease;
     transition: transform var(--speed) ease;
-    transition:
-      transform var(--speed) ease,
-      -webkit-transform var(--speed) ease;
+    transition: transform var(--speed) ease, -webkit-transform var(--speed) ease;
     -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+            transform: translateX(100%);
     -webkit-overflow-scrolling: touch;
   }
   #sample-cafe .header .nav__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     gap: 24px;
   }
   #sample-cafe .header {
@@ -365,7 +354,7 @@ img {
     position: static;
     padding: 6px 0 0;
     -webkit-box-shadow: none;
-    box-shadow: none;
+            box-shadow: none;
     background: transparent;
   }
   #sample-cafe .header .nav__submenu a {
@@ -380,7 +369,7 @@ img {
     z-index: 9;
     background: var(--overlay-bg);
     -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
   }
   #sample-cafe .header .nav__overlay[hidden] {
     display: none;
@@ -390,7 +379,7 @@ img {
   }
   #sample-cafe .header.is-open .nav__menu {
     -webkit-transform: translateX(0%);
-    transform: translateX(0%);
+            transform: translateX(0%);
   }
   #sample-cafe .header.is-open .nav__overlay {
     display: block;
@@ -401,14 +390,14 @@ img {
   }
   #sample-cafe .header.is-open .nav__bar:nth-child(1) {
     -webkit-transform: translateY(8px) rotate(28deg);
-    transform: translateY(8px) rotate(28deg);
+            transform: translateY(8px) rotate(28deg);
   }
   #sample-cafe .header.is-open .nav__bar:nth-child(2) {
     opacity: 0;
   }
   #sample-cafe .header.is-open .nav__bar:nth-child(3) {
     -webkit-transform: translateY(-12px) rotate(-28deg);
-    transform: translateY(-12px) rotate(-28deg);
+            transform: translateY(-12px) rotate(-28deg);
   }
   #sample-cafe .header {
     /* ブレークポイント切替直後のみアニメ無効（JSで .no-anim を一瞬付与） */
@@ -438,16 +427,16 @@ img {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.5rem;
 }
 #sample-cafe .footer__brand {
@@ -457,8 +446,8 @@ img {
   display: inline-flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   height: var(--nav-height);
   padding-left: 47px;
@@ -482,8 +471,8 @@ img {
   background: url(../images/logo_icon.webp) no-repeat;
   background-size: contain;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  content: '';
+          transform: translateY(-50%);
+  content: "";
 }
 #sample-cafe .footer__sns_list {
   display: -webkit-box;
@@ -493,16 +482,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.5rem;
 }
 #sample-cafe .footer__sns_list li {
@@ -515,7 +504,7 @@ img {
   width: 100%;
 }
 #sample-cafe .footer__copy {
-  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-family: "Playfair Display", "Noto Sans JP", sans-serif;
 }
 
 .btn {
@@ -526,16 +515,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 .btn a {
@@ -546,16 +535,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   max-width: 430px;
   color: #fff;
@@ -623,22 +612,22 @@ html.page-ready body {
 /* 方向ごとに開始位置を設定 */
 .fade-up {
   -webkit-transform: translateY(12px);
-  transform: translateY(12px);
+          transform: translateY(12px);
 }
 
 .fade-left {
   -webkit-transform: translateX(-12px);
-  transform: translateX(-12px);
+          transform: translateX(-12px);
 }
 
 .fade-right {
   -webkit-transform: translateX(12px);
-  transform: translateX(12px);
+          transform: translateX(12px);
 }
 
 .fade-in {
   -webkit-transform: none;
-  transform: none;
+          transform: none;
 }
 
 /* 表示状態 */
@@ -647,21 +636,12 @@ html.page-ready body {
 .fade-right.is-inview,
 .fade-in.is-inview {
   opacity: 1;
-  -webkit-transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
-  transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
-  transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    transform var(--scroll-fade-duration) var(--scroll-fade-ease);
-  transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    transform var(--scroll-fade-duration) var(--scroll-fade-ease),
-    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  -webkit-transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), transform var(--scroll-fade-duration) var(--scroll-fade-ease), -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
   -webkit-transform: none;
-  transform: none;
+          transform: none;
 }
 
 /* モーション苦手な人向け */
@@ -685,7 +665,7 @@ html.page-ready body {
     -webkit-transition: none;
     transition: none;
     -webkit-transform: none;
-    transform: none;
+            transform: none;
   }
 }
 /* 個別ディレイ/時間/イージングを data-* で上書きできるように
@@ -693,22 +673,22 @@ html.page-ready body {
 /* data-* から渡すカスタム値用（存在する時だけ効く） */
 :is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-duration] {
   -webkit-transition-duration: var(--fade-duration);
-  transition-duration: var(--fade-duration);
+          transition-duration: var(--fade-duration);
 }
 
 :is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-ease] {
   -webkit-transition-timing-function: var(--fade-ease);
-  transition-timing-function: var(--fade-ease);
+          transition-timing-function: var(--fade-ease);
 }
 
 /* 初期値では delay 0 にしておく（JSで必要分だけ付与） */
 :is(.fade-up, .fade-left, .fade-right, .fade-in) {
   -webkit-transition-delay: 0s;
-  transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 body {
-  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-family: "Playfair Display", "Noto Sans JP", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #5c5245;
@@ -729,7 +709,7 @@ a:hover {
   height: calc(100svh - var(--fixed-header));
   max-height: 810px;
   padding: 120px 1rem;
-  background: url('../../works/sample-cafe/images/fv_pc.webp') no-repeat;
+  background: url("../../works/sample-cafe/images/fv_pc.webp") no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
@@ -741,22 +721,22 @@ a:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 768px) {
   .hero {
     min-height: 500px;
     padding: 40px 1rem;
-    background: url('../../works/sample-cafe/images/fv_sp.webp') no-repeat;
+    background: url("../../works/sample-cafe/images/fv_sp.webp") no-repeat;
     background-position: center;
     background-size: cover;
   }
@@ -787,16 +767,16 @@ a:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
 }
 @media (max-width: 768px) {
@@ -827,16 +807,16 @@ a:hover {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 768px) {
   .heading_02 {
@@ -879,7 +859,7 @@ a:hover {
   height: 8px;
   border-radius: 50%;
   background: #c08a5c;
-  content: '';
+  content: "";
 }
 @media (max-width: 768px) {
   .heading_02--circle span::before {
@@ -901,8 +881,8 @@ a:hover {
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
   }
 }
@@ -922,11 +902,11 @@ a:hover {
   right: 0;
   width: 28px;
   height: 28px;
-  background: url('../../works/sample-cafe/images/arrow.svg') no-repeat;
+  background: url("../../works/sample-cafe/images/arrow.svg") no-repeat;
   background-size: contain;
   -webkit-transform: translateY(-50%) rotate(90deg);
-  transform: translateY(-50%) rotate(90deg);
-  content: '';
+          transform: translateY(-50%) rotate(90deg);
+  content: "";
 }
 @media (max-width: 768px) {
   .heading_03--arrow span::before {
@@ -966,8 +946,8 @@ section.bg-c2 {
 
 .card__list {
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -976,16 +956,16 @@ section.bg-c2 {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 24px;
 }
 @media (max-width: 768px) {
@@ -1008,9 +988,7 @@ section.bg-c2 {
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition:
-    transform 0.3s ease,
-    -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .card__item a .img_box {
   margin-bottom: 0.5rem;
@@ -1021,24 +999,22 @@ section.bg-c2 {
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition:
-    transform 0.3s ease,
-    -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .card__item a:hover {
   opacity: 0.7;
 }
 .card__item a:hover img {
   -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .card-2__list {
   display: grid;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 48px;
   grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
 }
@@ -1054,12 +1030,12 @@ section.bg-c2 {
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   gap: 24px;
 }
 @media (max-width: 768px) {
@@ -1069,8 +1045,8 @@ section.bg-c2 {
 }
 .card-2__list .card-2__img {
   -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
   max-width: 169px;
   overflow: hidden;
 }
@@ -1086,7 +1062,7 @@ section.bg-c2 {
   aspect-ratio: 4/3;
   border-radius: 8px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 .card-2__list .card-2__text {
   width: 100%;
@@ -1132,16 +1108,16 @@ section.bg-c2 {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0;
 }
 @media (max-width: 768px) {
@@ -1149,14 +1125,14 @@ section.bg-c2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .concept__img_wrap img {
   aspect-ratio: 600/357;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   .concept__img_wrap img {
@@ -1172,16 +1148,16 @@ section.bg-c2 {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: start;
   -webkit-align-items: start;
-  -ms-flex-align: start;
-  align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
   gap: 2rem;
 }
 @media (max-width: 768px) {
@@ -1189,8 +1165,8 @@ section.bg-c2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
     -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 .access .map,
@@ -1224,16 +1200,16 @@ section.bg-c2 {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
   -webkit-justify-content: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 2rem;
 }
 @media (max-width: 768px) {
@@ -1255,4 +1231,4 @@ section.bg-c2 {
   margin-bottom: 40px;
   font-weight: 700;
   font-size: 2.5rem;
-} /*# sourceMappingURL=sample-cafe.css.map */
+}/*# sourceMappingURL=sample-cafe.css.map */

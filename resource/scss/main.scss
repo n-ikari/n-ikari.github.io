@@ -32,14 +32,11 @@ body:has(.portfolio) {
     font-weight: 900;
     font-style: normal;
   }
-  h3 {
 
-  }
-
-  .inner + .inner{
+  .inner + .inner {
     margin-top: 80px;
     @include sp {
-    margin-top: 60px;
+      margin-top: 60px;
     }
   }
 
@@ -119,26 +116,22 @@ body:has(.portfolio) {
     font-size: r(18);
     margin-bottom: 30px;
 
-
     @include sp {
       font-size: r(16);
     }
-
   }
 
-
-
-  .heading_04{
+  .heading_04 {
     color: #60c864;
     font-weight: $fw-b;
     margin-bottom: 16px;
   }
 
-  ul + h4{
+  ul + h4 {
     margin-top: 40px;
   }
 
-  .tac{
+  .tac {
     text-align: center;
   }
 
@@ -192,13 +185,7 @@ body:has(.portfolio) {
     }
 
     &__inner {
-      // padding: 0 16px;
-      // display: grid;
-      // align-items: center;
-      // gap: var(--gap-x);
-      // grid-template-columns: 1fr auto;
-      // width: min(1920px, 100%);
-      // margin: 0 auto;
+      position: relative;
     }
 
     &__brand {
@@ -311,7 +298,7 @@ body:has(.portfolio) {
       }
 
       .nav__toggle {
-        position: relative;
+        position: absolute;
         z-index: 999;
         top: 1rem;
         right: 1rem;
@@ -449,8 +436,8 @@ body:has(.portfolio) {
     border-radius: 24px;
     box-shadow: var(--boxshadow);
     @include sp {
-     padding: 30px 20px 60px;
-     margin-top: 60px;
+      padding: 30px 20px 60px;
+      margin-top: 60px;
     }
 
     &:first-child {
@@ -463,9 +450,9 @@ body:has(.portfolio) {
     flex-direction: column;
     gap: 12px;
 
-    &:has(.label){
+    &:has(.label) {
       @include sp {
-      gap: 20px;
+        gap: 20px;
       }
     }
   }
@@ -473,14 +460,14 @@ body:has(.portfolio) {
     position: relative;
     padding-left: 28px;
     @include sp {
-    padding-left: 20px;
+      padding-left: 20px;
     }
     &:has(.label) {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       @include sp {
-      // flex-direction: column-reverse;
+        // flex-direction: column-reverse;
       }
     }
 
@@ -495,9 +482,9 @@ body:has(.portfolio) {
       left: 0;
       transform: translateY(-50%);
       @include sp {
-      width: 10px;
-      height: 3px;
-      top: 12px;
+        width: 10px;
+        height: 3px;
+        top: 12px;
       }
     }
   }

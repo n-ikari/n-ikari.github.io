@@ -1,13 +1,13 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap");
 *,
 ::before,
 ::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ::before,
@@ -101,8 +101,8 @@ img {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -111,7 +111,7 @@ img {
   padding: 1.25rem 1.875rem;
   background: var(--nav-bg);
   color: var(--nav-fg);
-  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-family: "Playfair Display", "Noto Sans JP", sans-serif;
   font-weight: 800;
 }
 @media (max-width: 768px) {
@@ -123,8 +123,8 @@ img {
   display: grid;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: var(--gap-x);
   grid-template-columns: 1fr auto;
   width: min(1920px, 100%);
@@ -137,8 +137,8 @@ img {
   display: inline-flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   height: var(--nav-height);
   padding-left: 47px;
@@ -162,8 +162,8 @@ img {
   background: url(../images/logo_icon.webp) no-repeat;
   background-size: contain;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  content: '';
+          transform: translateY(-50%);
+  content: "";
 }
 #sample-cafe .header {
   /* ===== PCナビ ===== */
@@ -180,16 +180,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: clamp(1.25rem, -0.183rem + 2.98vw, 2.5rem);
 }
 #sample-cafe .header {
@@ -215,7 +215,7 @@ img {
   background-color: #c08a5c;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
-  content: '';
+  content: "";
 }
 #sample-cafe .header .nav__item > a:hover,
 #sample-cafe .header .nav__submenu-toggle:hover {
@@ -244,7 +244,7 @@ img {
   padding: 8px;
   border-radius: var(--radius, 12px); /* ← 未定義時は12pxに */
   -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   background: #1f2937;
   list-style: none;
 }
@@ -279,21 +279,12 @@ img {
   margin: 0 auto;
   border-radius: 4px;
   background: var(--nav-btn);
-  -webkit-transition:
-    opacity var(--speed),
-    -webkit-transform var(--speed);
-  transition:
-    opacity var(--speed),
-    -webkit-transform var(--speed);
-  transition:
-    transform var(--speed),
-    opacity var(--speed);
-  transition:
-    transform var(--speed),
-    opacity var(--speed),
-    -webkit-transform var(--speed);
+  -webkit-transition: opacity var(--speed), -webkit-transform var(--speed);
+  transition: opacity var(--speed), -webkit-transform var(--speed);
+  transition: transform var(--speed), opacity var(--speed);
+  transition: transform var(--speed), opacity var(--speed), -webkit-transform var(--speed);
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
 }
 #sample-cafe .header {
   /* ===== モバイル（768px以下） ===== */
@@ -310,16 +301,16 @@ img {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 8px;
   }
   #sample-cafe .header {
@@ -339,23 +330,21 @@ img {
     -webkit-transition: -webkit-transform var(--speed) ease;
     transition: -webkit-transform var(--speed) ease;
     transition: transform var(--speed) ease;
-    transition:
-      transform var(--speed) ease,
-      -webkit-transform var(--speed) ease;
+    transition: transform var(--speed) ease, -webkit-transform var(--speed) ease;
     -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+            transform: translateX(100%);
     -webkit-overflow-scrolling: touch;
   }
   #sample-cafe .header .nav__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     gap: 24px;
   }
   #sample-cafe .header {
@@ -366,7 +355,7 @@ img {
     position: static;
     padding: 6px 0 0;
     -webkit-box-shadow: none;
-    box-shadow: none;
+            box-shadow: none;
     background: transparent;
   }
   #sample-cafe .header .nav__submenu a {
@@ -381,7 +370,7 @@ img {
     z-index: 9;
     background: var(--overlay-bg);
     -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
   }
   #sample-cafe .header .nav__overlay[hidden] {
     display: none;
@@ -391,7 +380,7 @@ img {
   }
   #sample-cafe .header.is-open .nav__menu {
     -webkit-transform: translateX(0%);
-    transform: translateX(0%);
+            transform: translateX(0%);
   }
   #sample-cafe .header.is-open .nav__overlay {
     display: block;
@@ -402,14 +391,14 @@ img {
   }
   #sample-cafe .header.is-open .nav__bar:nth-child(1) {
     -webkit-transform: translateY(8px) rotate(28deg);
-    transform: translateY(8px) rotate(28deg);
+            transform: translateY(8px) rotate(28deg);
   }
   #sample-cafe .header.is-open .nav__bar:nth-child(2) {
     opacity: 0;
   }
   #sample-cafe .header.is-open .nav__bar:nth-child(3) {
     -webkit-transform: translateY(-12px) rotate(-28deg);
-    transform: translateY(-12px) rotate(-28deg);
+            transform: translateY(-12px) rotate(-28deg);
   }
   #sample-cafe .header {
     /* ブレークポイント切替直後のみアニメ無効（JSで .no-anim を一瞬付与） */
@@ -439,16 +428,16 @@ img {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.5rem;
 }
 #sample-cafe .footer__brand {
@@ -458,8 +447,8 @@ img {
   display: inline-flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   height: var(--nav-height);
   padding-left: 47px;
@@ -483,8 +472,8 @@ img {
   background: url(../images/logo_icon.webp) no-repeat;
   background-size: contain;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  content: '';
+          transform: translateY(-50%);
+  content: "";
 }
 #sample-cafe .footer__sns_list {
   display: -webkit-box;
@@ -494,16 +483,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.5rem;
 }
 #sample-cafe .footer__sns_list li {
@@ -516,7 +505,7 @@ img {
   width: 100%;
 }
 #sample-cafe .footer__copy {
-  font-family: 'Playfair Display', 'Noto Sans JP', sans-serif;
+  font-family: "Playfair Display", "Noto Sans JP", sans-serif;
 }
 
 .btn {
@@ -527,16 +516,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 .btn a {
@@ -547,16 +536,16 @@ img {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   max-width: 430px;
   color: #fff;
@@ -624,22 +613,22 @@ html.page-ready body {
 /* 方向ごとに開始位置を設定 */
 .fade-up {
   -webkit-transform: translateY(12px);
-  transform: translateY(12px);
+          transform: translateY(12px);
 }
 
 .fade-left {
   -webkit-transform: translateX(-12px);
-  transform: translateX(-12px);
+          transform: translateX(-12px);
 }
 
 .fade-right {
   -webkit-transform: translateX(12px);
-  transform: translateX(12px);
+          transform: translateX(12px);
 }
 
 .fade-in {
   -webkit-transform: none;
-  transform: none;
+          transform: none;
 }
 
 /* 表示状態 */
@@ -648,21 +637,12 @@ html.page-ready body {
 .fade-right.is-inview,
 .fade-in.is-inview {
   opacity: 1;
-  -webkit-transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
-  transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
-  transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    transform var(--scroll-fade-duration) var(--scroll-fade-ease);
-  transition:
-    opacity var(--scroll-fade-duration) var(--scroll-fade-ease),
-    transform var(--scroll-fade-duration) var(--scroll-fade-ease),
-    -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  -webkit-transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), transform var(--scroll-fade-duration) var(--scroll-fade-ease);
+  transition: opacity var(--scroll-fade-duration) var(--scroll-fade-ease), transform var(--scroll-fade-duration) var(--scroll-fade-ease), -webkit-transform var(--scroll-fade-duration) var(--scroll-fade-ease);
   -webkit-transform: none;
-  transform: none;
+          transform: none;
 }
 
 /* モーション苦手な人向け */
@@ -686,7 +666,7 @@ html.page-ready body {
     -webkit-transition: none;
     transition: none;
     -webkit-transform: none;
-    transform: none;
+            transform: none;
   }
 }
 /* 個別ディレイ/時間/イージングを data-* で上書きできるように
@@ -694,28 +674,28 @@ html.page-ready body {
 /* data-* から渡すカスタム値用（存在する時だけ効く） */
 :is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-duration] {
   -webkit-transition-duration: var(--fade-duration);
-  transition-duration: var(--fade-duration);
+          transition-duration: var(--fade-duration);
 }
 
 :is(.fade-up, .fade-left, .fade-right, .fade-in).is-inview[data-fade-ease] {
   -webkit-transition-timing-function: var(--fade-ease);
-  transition-timing-function: var(--fade-ease);
+          transition-timing-function: var(--fade-ease);
 }
 
 /* 初期値では delay 0 にしておく（JSで必要分だけ付与） */
 :is(.fade-up, .fade-left, .fade-right, .fade-in) {
   -webkit-transition-delay: 0s;
-  transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 .poppins-black {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
 
 body:has(.portfolio) {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   background: #f1f9f6;
@@ -732,7 +712,7 @@ body:has(.portfolio) {
 }
 .portfolio h1,
 .portfolio h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
@@ -756,16 +736,16 @@ body:has(.portfolio) {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
 }
 @media (max-width: 768px) {
@@ -800,12 +780,12 @@ body:has(.portfolio) {
   }
 }
 .portfolio .heading_02::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 40px;
   height: 8px;
   background: #60c864;
@@ -875,22 +855,22 @@ body:has(.portfolio) {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: -webkit-sticky;
   position: sticky;
   z-index: 50;
   padding: 1.25rem 1.875rem;
   background: #fff;
   border-radius: 100vw;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   -webkit-box-shadow: var(--boxshadow);
-  box-shadow: var(--boxshadow);
+          box-shadow: var(--boxshadow);
 }
 @media (max-width: 768px) {
   .portfolio .header {
@@ -903,9 +883,12 @@ body:has(.portfolio) {
     left: 0;
     background: transparent;
     -webkit-box-shadow: none;
-    box-shadow: none;
+            box-shadow: none;
     z-index: 999;
   }
+}
+.portfolio .header__inner {
+  position: relative;
 }
 .portfolio .header__brand {
   display: -webkit-inline-box;
@@ -914,8 +897,8 @@ body:has(.portfolio) {
   display: inline-flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   height: var(--nav-height);
   padding-left: 47px;
@@ -939,8 +922,8 @@ body:has(.portfolio) {
   background: url(../images/logo_icon.webp) no-repeat;
   background-size: contain;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  content: '';
+          transform: translateY(-50%);
+  content: "";
 }
 .portfolio .header {
   /* ===== PCナビ ===== */
@@ -957,16 +940,16 @@ body:has(.portfolio) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: clamp(1.25rem, -0.183rem + 2.98vw, 2.5rem);
 }
 .portfolio .header {
@@ -1004,7 +987,7 @@ body:has(.portfolio) {
   padding: 8px;
   border-radius: var(--radius, 12px); /* ← 未定義時は12pxに */
   -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   background: #1f2937;
   list-style: none;
 }
@@ -1039,21 +1022,12 @@ body:has(.portfolio) {
   margin: 0 auto;
   border-radius: 4px;
   background: #60c864;
-  -webkit-transition:
-    opacity var(--speed),
-    -webkit-transform var(--speed);
-  transition:
-    opacity var(--speed),
-    -webkit-transform var(--speed);
-  transition:
-    transform var(--speed),
-    opacity var(--speed);
-  transition:
-    transform var(--speed),
-    opacity var(--speed),
-    -webkit-transform var(--speed);
+  -webkit-transition: opacity var(--speed), -webkit-transform var(--speed);
+  transition: opacity var(--speed), -webkit-transform var(--speed);
+  transition: transform var(--speed), opacity var(--speed);
+  transition: transform var(--speed), opacity var(--speed), -webkit-transform var(--speed);
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
 }
 .portfolio .header {
   /* ===== モバイル（768px以下） ===== */
@@ -1063,7 +1037,7 @@ body:has(.portfolio) {
     grid-template-columns: 1fr auto;
   }
   .portfolio .header .nav__toggle {
-    position: relative;
+    position: absolute;
     z-index: 999;
     top: 1rem;
     right: 1rem;
@@ -1074,16 +1048,16 @@ body:has(.portfolio) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 4px;
     background: #fff;
     border-radius: 50%;
@@ -1107,11 +1081,9 @@ body:has(.portfolio) {
     -webkit-transition: -webkit-transform var(--speed) ease;
     transition: -webkit-transform var(--speed) ease;
     transition: transform var(--speed) ease;
-    transition:
-      transform var(--speed) ease,
-      -webkit-transform var(--speed) ease;
+    transition: transform var(--speed) ease, -webkit-transform var(--speed) ease;
     -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+            transform: translateX(100%);
     -webkit-overflow-scrolling: touch;
     border-top-left-radius: 44px;
   }
@@ -1119,12 +1091,12 @@ body:has(.portfolio) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     gap: 24px;
   }
   .portfolio .header {
@@ -1135,7 +1107,7 @@ body:has(.portfolio) {
     position: static;
     padding: 6px 0 0;
     -webkit-box-shadow: none;
-    box-shadow: none;
+            box-shadow: none;
     background: transparent;
   }
   .portfolio .header .nav__submenu a {
@@ -1150,7 +1122,7 @@ body:has(.portfolio) {
     z-index: 9;
     background: var(--overlay-bg);
     -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
   }
   .portfolio .header .nav__overlay[hidden] {
     display: none;
@@ -1160,7 +1132,7 @@ body:has(.portfolio) {
   }
   .portfolio .header.is-open .nav__menu {
     -webkit-transform: translateX(0%);
-    transform: translateX(0%);
+            transform: translateX(0%);
   }
   .portfolio .header.is-open .nav__overlay {
     display: block;
@@ -1173,14 +1145,14 @@ body:has(.portfolio) {
   }
   .portfolio .header.is-open .nav__bar:nth-child(1) {
     -webkit-transform: translateY(6px) rotate(40deg);
-    transform: translateY(6px) rotate(40deg);
+            transform: translateY(6px) rotate(40deg);
   }
   .portfolio .header.is-open .nav__bar:nth-child(2) {
     opacity: 0;
   }
   .portfolio .header.is-open .nav__bar:nth-child(3) {
     -webkit-transform: translateY(-8px) rotate(-40deg);
-    transform: translateY(-8px) rotate(-40deg);
+            transform: translateY(-8px) rotate(-40deg);
   }
   .portfolio .header {
     /* ブレークポイント切替直後のみアニメ無効（JSで .no-anim を一瞬付与） */
@@ -1219,7 +1191,7 @@ body:has(.portfolio) {
   background: #fff;
   border-radius: 24px;
   -webkit-box-shadow: var(--boxshadow);
-  box-shadow: var(--boxshadow);
+          box-shadow: var(--boxshadow);
 }
 @media (max-width: 768px) {
   .portfolio .section {
@@ -1238,8 +1210,8 @@ body:has(.portfolio) {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 12px;
 }
 @media (max-width: 768px) {
@@ -1262,12 +1234,12 @@ body:has(.portfolio) {
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   gap: 8px;
 }
 .portfolio__item::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 16px;
   height: 4px;
@@ -1276,7 +1248,7 @@ body:has(.portfolio) {
   top: 13px;
   left: 0;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 @media (max-width: 768px) {
   .portfolio__item::before {
@@ -1290,7 +1262,7 @@ body:has(.portfolio) {
 }
 .portfolio .footer__copy {
   padding-block: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #333;
   color: #fff;
   font-weight: 800;
@@ -1300,4 +1272,4 @@ body:has(.portfolio) {
   .portfolio .footer__copy {
     font-size: 0.875rem;
   }
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

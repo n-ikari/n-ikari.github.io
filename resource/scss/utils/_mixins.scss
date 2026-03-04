@@ -96,9 +96,10 @@ $breakpoints: (
 // =============================
 // パーツmixin
 // =============================
+
 // *ロゴ
 @mixin brand-logo(
-  $img: '../images/logo_icon.webp',
+  $img: '../../../works/sample-cafe/images/logo_icon.webp',
   $fg: $secondary-color,
   $font-size: clamp(1.25rem, 0.963rem + 0.6vw, 1.5rem),
   $icon-size: clamp(1.875rem, 0.801rem + 2.24vw, 2.813rem),
@@ -133,4 +134,3 @@ $breakpoints: (
     content: '';
   }
 }
-

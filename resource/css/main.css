@@ -748,12 +748,12 @@ body:has(.portfolio) {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
 }
 @media (max-width: 768px) {
   .portfolio .heading_01 {
     padding-top: 80px;
-    font-size: 3rem;
+    margin-bottom: 20px;
+    font-size: 3.25rem;
   }
 }
 .portfolio .heading_01::before {
@@ -774,6 +774,10 @@ body:has(.portfolio) {
     width: 60px;
     height: 60px;
   }
+}
+.portfolio .heading_01 span {
+  font-weight: 400;
+  font-size: 0.3em;
 }
 .portfolio .heading_02 {
   position: relative;
@@ -1269,6 +1273,9 @@ body:has(.portfolio) {
 }
 .portfolio .thankyou {
   text-align: center;
+}
+.portfolio .thankyou p {
+  line-height: 2em;
 }
 .portfolio .footer__copy {
   padding-block: 1rem;

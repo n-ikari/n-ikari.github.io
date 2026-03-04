@@ -51,11 +51,12 @@ body:has(.portfolio) {
     // letter-spacing: 0.1em;
     // text-shadow: var(--textshadow);
 
-    @include flex(center, center, column, 1rem);
+    @include flex(center, center, column);
 
     @include sp {
       padding-top: 80px;
-      font-size: r(48);
+      margin-bottom: 20px;
+      font-size: r(52);
     }
 
     &::before {
@@ -76,6 +77,11 @@ body:has(.portfolio) {
         width: 60px;
         height: 60px;
       }
+    }
+
+    span {
+      font-weight: $fw-r;
+      font-size: 0.3em;
     }
     // @keyframes swing {
     //   0% {
@@ -512,6 +518,9 @@ body:has(.portfolio) {
 
   .thankyou {
     text-align: center;
+    p{
+      line-height: 2em;
+    }
   }
 
   .footer {
